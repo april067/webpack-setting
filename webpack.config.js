@@ -13,6 +13,26 @@ module.exports = {
 		}),
 		new CleanWebpackPlugin(),
 	],
+	module: {
+		rules: [
+			// JavaScript
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: ['babel-loader'],
+			},
+			// Images
+			{
+				test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+				type: 'asset/resource',
+			},
+			// Fonts and SVGs
+			{
+				test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+				type: 'asset/inline',
+			},
+		],
+	},
 	output: {
 		filename: 'main.js',
 		path: path.resolve(__dirname, 'dist'),
