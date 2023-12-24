@@ -1,5 +1,6 @@
 import example from './images/example.png';
 import linkedin from './images/linkedin.svg';
+import './styles/main.scss';
 
 // Create a class property without a constructor
 class Game {
